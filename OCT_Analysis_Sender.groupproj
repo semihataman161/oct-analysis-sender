@@ -1,0 +1,36 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{FED98A6D-7129-4C1A-A2F1-32287F4C37C4}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="OCTAnalysisSenderSvc.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="OCTAnalysisSenderSvc">
+        <MSBuild Projects="OCTAnalysisSenderSvc.dproj"/>
+    </Target>
+    <Target Name="OCTAnalysisSenderSvc:Clean">
+        <MSBuild Projects="OCTAnalysisSenderSvc.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="OCTAnalysisSenderSvc:Make">
+        <MSBuild Projects="OCTAnalysisSenderSvc.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="OCTAnalysisSenderSvc"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="OCTAnalysisSenderSvc:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="OCTAnalysisSenderSvc:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
